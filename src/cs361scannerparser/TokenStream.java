@@ -7,6 +7,8 @@ package cs361scannerparser;
 //the code and also make sure it implements a scanner for JAY - not something
 //else.
 
+//HW team members Zheming Chen and Guo Tang
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
