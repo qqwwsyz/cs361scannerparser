@@ -260,7 +260,7 @@ public class TokenStream {
 
 	private boolean isDigit(char c) {
 		return (c >= '0' && c <= '9');
-	}
+	} // COMPLETED
 
 	public boolean isEndofFile() {
 		return isEof;
