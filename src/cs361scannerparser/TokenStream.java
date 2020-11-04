@@ -139,7 +139,7 @@ public class TokenStream {
 			t.setValue(t.getValue() + nextChar);
 			nextChar = readChar();
 			
-			// TODO TO BE COMPLETED
+			// COMPLETED
 			return t;
 		}
 
@@ -213,7 +213,7 @@ public class TokenStream {
 	private boolean isKeyword(String s) {
 		return (s.equals("boolean") || s.equals("if") || s.equals("else") || s.equals("while") || s.equals("void") || s.equals("main") ||
 				s.equals("int"));
-		// TODO TO BE COMPLETED 
+		// COMPLETED 
 		
 	}
 
@@ -239,7 +239,7 @@ public class TokenStream {
 	private boolean isSeparator(char c) {
 		return (c == '(' || c == ')' || c == '{' || c == '}' || c == ';' 
 				|| c == ',');
-		// TODO TO BE COMPLETED
+		// COMPLETED
 		
 	}
 
@@ -248,7 +248,7 @@ public class TokenStream {
 				|| c == '&' || c == '<' || c == '>' || c == '*' 
 				|| c == '/' || c == '|');
 		// Checks for characters that start operators
-		// TODO TO BE COMPLETED
+		// COMPLETED
 		
 	}
 
