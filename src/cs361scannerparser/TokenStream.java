@@ -102,7 +102,7 @@ public class TokenStream {
 				//Looking for '!='
 				// look for <=, >=, ==, and !=
 				
-				// TODO TO BE COMPLETED
+				// COMPLETED
 				
 			case '|':
 				// Look for ||
