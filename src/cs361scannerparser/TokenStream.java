@@ -250,7 +250,7 @@ public class TokenStream {
 				|| c == '&' || c == '<' || c == '>' || c == '*' 
 				|| c == '/' || c == '|');
 		// Checks for characters that start operators
-		// COMPLETED
+		// COMPLETE
 		
 	}
 
