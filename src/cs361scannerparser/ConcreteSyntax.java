@@ -54,7 +54,11 @@ public class ConcreteSyntax {
 		for (int i = 0; i < header.length; i++)
 			// bypass "void main ( )"
 			match(header[i]);
-		// TODO TO BE COMPLETED
+		match("{");
+		p.decpart = declarations();
+		p.body = statements();
+		match("}");
+		// COMPLETED
 		return p;
 	}
 
@@ -127,9 +131,11 @@ public class ConcreteSyntax {
 			s = ifStatement();
 		else if (token.getValue().equals("while")) {
 			// WhileStatement
-			// TODO TO BE COMPLETED
+			s = whileStatement();
+			//  COMPLETED
 		} else if (token.getType().equals("Identifier")) { // Assignment
-			// TODO TO BE COMPLETED
+			s = assignment();
+			// COMPLETED
 		} else
 			throw new RuntimeException(SyntaxError("Statement"));
 		return s;
