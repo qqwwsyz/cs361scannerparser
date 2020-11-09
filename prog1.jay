@@ -22,10 +22,8 @@ while
 !=
 | // lexical error
 ||
+true
+false
+boolean
+test
 void
-
-
-
-
-
-

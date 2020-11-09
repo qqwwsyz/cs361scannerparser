@@ -16,7 +16,6 @@ import java.io.IOException;
 
 public class TokenStream {
 
-	// READ THE COMPLETE FILE FIRST
 
 	private boolean isEof = false; // is end of file
 
@@ -47,7 +46,7 @@ public class TokenStream {
 		t.setType("Other"); // For now it is Other
 		t.setValue("");
 
-		// First check for whitespaces and bypass them
+		// First check for white spaces and bypass them
 		skipWhiteSpace();
 
 		// Then check for a comment, and bypass it
@@ -58,8 +57,16 @@ public class TokenStream {
 			nextChar = readChar();
 			if (nextChar == '/') { // If / is followed by another /
 				// skip rest of line - it's a comment.
-				// TODO TO BE COMPLETED
+				// COMPLETED
 				// look for <cr>, <lf>, <ff>
+				while(!isEndOfLine(nextChar)) {
+					nextChar = readChar();
+				}
+				if(isEndOfLine(nextChar)) {
+					nextChar = readChar();
+				}
+					
+				
 
 			} else {
 				// A slash followed by anything else must be an operator.
@@ -76,38 +83,24 @@ public class TokenStream {
 			t.setType("Operator");
 			t.setValue(t.getValue() + nextChar);
 			switch (nextChar) {
-			case '<':
-				if(nextChar == '='){
-					t.setValue(t.getValue() + nextChar);
-					nextChar = readChar();
-				} return t;
-				//Looking for '<='
-			case '>':
-				if(nextChar == '=') {
-					t.setValue(t.getValue()+nextChar);
-					nextChar = readChar();
-				} return t;
-			    //Looking for '>='
 			case '=':
-				if(nextChar == '=') {
-					t.setValue(t.getValue()+nextChar);
-					nextChar = readChar();
-				} return t;
-				//Looking for '=='
+			case '>':
+			case '<':
 			case '!':
-				if(nextChar == '=') {
-					t.setValue(t.getValue()+nextChar);
+				// look for <=, >=, !=, ==
+				nextChar = readChar();
+				if (nextChar == '=') {
+					t.setValue(t.getValue() + nextChar);
+					t.setType("Operator");
 					nextChar = readChar();
-				} return t; 
-				//Looking for '!='
-				// look for <=, >=, ==, and !=
-				
+				}
+				return t;
 				// COMPLETED
 				
 			case '|':
 				// Look for ||
 				nextChar = readChar();
-				if (nextChar == '|') {
+			if (nextChar == '|') {
 					t.setValue(t.getValue() + nextChar);
 					nextChar = readChar();
 					return t;
@@ -189,7 +182,7 @@ public class TokenStream {
 			nextChar = readChar();
 		}
 		
-		// Finally check for whitespaces and bypass them
+		// Finally check for white spaces and bypass them
 		skipWhiteSpace();
 
 		return t;
@@ -250,7 +243,7 @@ public class TokenStream {
 				|| c == '&' || c == '<' || c == '>' || c == '*' 
 				|| c == '/' || c == '|');
 		// Checks for characters that start operators
-		// COMPLETE
+		// COMPLETED
 		
 	}
 

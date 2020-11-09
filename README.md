@@ -1,2 +1,1 @@
-# cs361 Scanner/Parser HW
-  Team: Zheming Chen & Guo Tang
+# cs361scannerparser HW
