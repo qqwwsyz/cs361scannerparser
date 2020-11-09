@@ -16,7 +16,6 @@ import java.io.IOException;
 
 public class TokenStream {
 
-	// READ THE COMPLETE FILE FIRST
 
 	private boolean isEof = false; // is end of file
 
@@ -47,7 +46,7 @@ public class TokenStream {
 		t.setType("Other"); // For now it is Other
 		t.setValue("");
 
-		// First check for whitespaces and bypass them
+		// First check for white spaces and bypass them
 		skipWhiteSpace();
 
 		// Then check for a comment, and bypass it
@@ -183,7 +182,7 @@ public class TokenStream {
 			nextChar = readChar();
 		}
 		
-		// Finally check for whitespaces and bypass them
+		// Finally check for white spaces and bypass them
 		skipWhiteSpace();
 
 		return t;
