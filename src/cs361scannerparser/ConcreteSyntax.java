@@ -14,7 +14,7 @@ package cs361scannerparser;
 public class ConcreteSyntax {
 
 	// READ THE COMPLETE FILE FIRST
-	
+
 	// Instance variables
 	public Token token; // current token that is considered from the input
 	// stream - this is in the code
@@ -29,8 +29,7 @@ public class ConcreteSyntax {
 
 	// Method that prints a syntax error message
 	private String SyntaxError(String tok) {
-		String s = "Syntax error - Expecting: " + tok + " But saw: "
-				+ token.getType() + " = " + token.getValue();
+		String s = "Syntax error - Expecting: " + tok + " But saw: " + token.getType() + " = " + token.getValue();
 		System.out.println(s);
 		return s;
 		// System.exit(0);
@@ -65,8 +64,7 @@ public class ConcreteSyntax {
 	private Declarations declarations() {
 		// Declarations --> { Declaration }*
 		Declarations ds = new Declarations();
-		while (token.getValue().equals("int")
-				|| token.getValue().equals("bool")) {
+		while (token.getValue().equals("int") || token.getValue().equals("bool")) {
 			declaration(ds);
 		}
 		return ds;
@@ -132,7 +130,7 @@ public class ConcreteSyntax {
 		else if (token.getValue().equals("while")) {
 			// WhileStatement
 			s = whileStatement();
-			//  COMPLETED
+			// COMPLETED
 		} else if (token.getType().equals("Identifier")) { // Assignment
 			s = assignment();
 			// COMPLETED
@@ -195,10 +193,8 @@ public class ConcreteSyntax {
 		Expression e;
 		e = addition();
 		// TODO TO BE COMPLETED
-		while (token.getValue().equals("<") || token.getValue().equals("<=")
-				|| token.getValue().equals(">=")
-				|| token.getValue().equals("==")
-				|| token.getValue().equals("<>")) {
+		while (token.getValue().equals("<") || token.getValue().equals("<=") || token.getValue().equals(">=")
+				|| token.getValue().equals("==") || token.getValue().equals("<>")) {
 			b = new Binary();
 			// TODO TO BE COMPLETED
 			e = b;
